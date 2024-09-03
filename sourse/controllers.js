@@ -18,6 +18,7 @@ function detailPage(res,id) {
     <head>
     <meta charset="UTF-8" />
     <title>Дело ::: Список запланированных дел</title>
+    <p>Дело № ${id}</p>
     </head>
     <body>
     <h1>Дело</h1>

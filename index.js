@@ -9,10 +9,14 @@ const reDetail = /\/([0-9abcdef]{24})/
 
 server.on('request', (req, res) => {
 res.setHeader('Content-Type', 'text/html; charset=utf-8');
+
 const requestedPath = new URL(req.url,`http://${req.headers.host}`).pathname
 const r = reDetail.exec(requestedPath)
+
 if(r) detailPage(res,r[1])
+
 else if(requestedPath === '/') mainPage(res)
+     
 else errorPage(res)
 });
 
